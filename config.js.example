@@ -1,6 +1,7 @@
 Remember to rename the file to config.js and remove this line :)
 const config = {
   "ownerID": "DiscordID",
+  "guildID": "GuildID",
   "token": "YourToken",
   "prefix": "YourPrefix",
   "defaultSettings" : {

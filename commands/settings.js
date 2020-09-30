@@ -10,6 +10,7 @@ exports.run = async (client, message, args) => {
         .setDescription('There are the current settings for Alarmbot.')
         .addField('Prefix', config.prefix)
         .addField('OwnerID', config.ownerID)
+        .addField('GuildID', config.guildID)
         .addField('SystemNotice', config.defaultSettings.systemNotice)
 
     message.channel.send(configEmbed);
@@ -27,7 +28,7 @@ exports.run = async (client, message, args) => {
         const setting = await client.awaitReply(message, "What setting do you want to change?");
         for (var i = 0; i < configEmbedJSON.fields.length; i++) {
             if (setting === configEmbedJSON.fields[i].name || setting === configEmbedJSON.fields[i].name.toLowerCase()) {
-                var value = await client.awaitReply(message, `What value should ${setting} be? NOTE: CanvasBot will restart afterwards`);
+                var value = await client.awaitReply(message, `What value should ${setting} be? NOTE: AlarmBot will restart afterwards`);
                 if (value === false) {
                     const retry = await client.awaitReply(message, 'It seems that something went wrong or you took too long to respond. Do you want to retry? (y/n)');
                     if (retry === 'y') {
@@ -62,7 +63,7 @@ exports.conf = {
 
 exports.help = {
     name: 'settings',
-    category: "Canvas Commands",
+    category: "conf",
     description: "Shows the default settings and allows you to change them.",
     usage: 'settings [numberOfChanges]',
     aliases: ['set', 'config']
