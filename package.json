@@ -1,0 +1,18 @@
+{
+  "name": "alarmbot",
+  "version": "1.0.0",
+  "description": "A discord bot that keeps track of time for you.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MatthewWertman",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.3.2",
+    "discord.js": "^12.3.1",
+    "ffmpeg-static": "^4.2.7",
+    "moment": "^2.29.0",
+    "moment-duration-format": "^2.3.2"
+  }
+}
