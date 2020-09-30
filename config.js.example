@@ -1,0 +1,24 @@
+Remember to rename the file to config.js and remove this line :)
+const config = {
+  "ownerID": "DiscordID",
+  "token": "YourToken",
+  "prefix": "YourPrefix",
+  "defaultSettings" : {
+    "systemNotice": "true", // This gives a notice when a user tries to run a command that they do not have permission to use.
+  },
+
+  // PERMISSION LEVEL DEFINITIONS.
+
+  permLevels: [
+    { level: 0,
+      name: "User",
+      check: () => true
+    },
+    { level: 10,
+      name: "Bot Owner",
+      check: (message) => message.client.config.ownerID === message.author.id
+    }
+  ]
+};
+
+module.exports = config;
