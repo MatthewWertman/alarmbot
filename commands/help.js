@@ -34,7 +34,7 @@ exports.run = (client, message, args, level) => {
             }
             embed.addField(`${client.config.prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)}`, `${c.help.description}`);
         });
-        embed.setFooter(`Sent by RollBot aww yeah 😎`, "https://cdn.discordapp.com/avatars/309863276383174656/eabae49bc31e7fb5a44f01199ee6f14b.png")
+        embed.setFooter('Sent by Alarmbot');
         message.author.send(embed);
         if (message.client.config.ownerID === message.author.id) return message.author.send(admin);
     } else {
