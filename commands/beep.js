@@ -3,9 +3,9 @@ exports.run = async (client, message) => {
     const connection = await message.member.voice.channel.join();
     const dispatcher = connection.play('./sfx/beep.mp3');
     dispatcher.on('finish', () => {
-        console.log('Finished playing'); //Notifies that stream is done
-        dispatcher.destroy(); //Destroys stream
-        connection.disconnect() //disconnect
+        console.log('Finished playing'); // notifies that stream is done
+        dispatcher.destroy(); // destroys stream
+        connection.disconnect() // disconnect
     });
 };
 

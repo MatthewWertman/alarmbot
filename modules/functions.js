@@ -1,4 +1,6 @@
 const moment = require('moment');
+require("moment-duration-format");
+require('moment-timer');
 const log = message => {console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`)};
 const config = require('../config.js');
 const fs = require('fs');
@@ -112,6 +114,14 @@ module.exports = (client) => {
 
     // `await client.wait(1000);` to "pause" for 1 second.
     client.wait = require("util").promisify(setTimeout);
+
+    client.setTimer = (msg, n) => {
+        if (!Number.isSafeInteger(n) || isNaN(n)) return false;
+        let t = new moment.duration(n, "seconds").timer(() => {
+            msg.reply('Timer has expired!');
+        });
+        return t;
+    };
 
     // These 2 process methods will catch exceptions and give *more details* about the error and stack trace.
     process.on("uncaughtException", (err) => {
