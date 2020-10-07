@@ -15,7 +15,7 @@ exports.conf = {
 
 exports.help = {
     name: 'leave',
-    category: "Miscellaneous",
+    category: "Voice",
     description: "Disconnects the bot",
     usage: 'leave',
     aliases: []

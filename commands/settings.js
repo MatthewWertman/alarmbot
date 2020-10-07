@@ -63,7 +63,7 @@ exports.conf = {
 
 exports.help = {
     name: 'settings',
-    category: "conf",
+    category: "Administrator",
     description: "Shows the default settings and allows you to change them.",
     usage: 'settings [numberOfChanges]',
     aliases: ['set', 'config']

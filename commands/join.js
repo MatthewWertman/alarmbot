@@ -15,7 +15,7 @@ exports.conf = {
 
 exports.help = {
     name: 'join',
-    category: "Miscellaneous",
+    category: "Voice",
     description: "Joins the bot to connected voice channel.",
     usage: 'join',
     aliases: []

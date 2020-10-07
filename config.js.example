@@ -15,6 +15,10 @@ const config = {
       name: "User",
       check: () => true
     },
+    { level: 4,
+      name: "Server Owner",
+      check: (message) => message.channel.type === "text" ? (message.guild.ownerID === message.author.id ? true : false) : false
+    },
     { level: 10,
       name: "Bot Owner",
       check: (message) => message.client.config.ownerID === message.author.id

@@ -15,7 +15,7 @@ exports.conf = {
 
 exports.help = {
     name: "time",
-    category: "Miscelaneous",
+    category: "Alarmbot",
     description: "Gives the time",
     usage: "time",
     aliases: ['clock', 't']

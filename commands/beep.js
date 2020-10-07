@@ -18,7 +18,7 @@ exports.conf = {
 
 exports.help = {
   name: 'beep',
-  category: "Miscellaneous",
+  category: "Voice",
   description: "Testing playing local files",
   usage: 'beep',
   aliases: []
