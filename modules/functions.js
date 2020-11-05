@@ -1,9 +1,10 @@
-const moment = require('moment');
+const moment = require("moment");
 require("moment-duration-format");
-require('moment-timer');
-const log = message => {console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`)};
+require("moment-timer");
+const log = message => {
+    console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
+};
 const config = require('../config.js');
-const fs = require('fs');
 
 module.exports = (client) => {
     client.permlevel = message => {
@@ -112,12 +113,9 @@ module.exports = (client) => {
         return t;
     };
 
-    // These 2 process methods will catch exceptions and give *more details* about the error and stack trace.
     process.on("uncaughtException", (err) => {
         const errorMsg = err.stack.replace(new RegExp(`${__dirname}/`, "g"), "./");
         log(`Uncaught Exception: ${errorMsg}`);
-        // Always best practice to let the code crash on uncaught exceptions.
-        // Because you should be catching them anyway.
         process.exit(1);
     });
 
